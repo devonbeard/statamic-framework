@@ -1,0 +1,71 @@
+{
+  "pages": [
+    {
+      "id": "db0ae4e3-4f10-4802-bc40-0b880cbf02c7",
+      "order": 1,
+      "title": "Home",
+      "original_title": "Home",
+      "type": "Pages",
+      "classname": "",
+      "linktitle": "",
+      "items": [],
+      "pages": []
+    },
+    {
+      "id": "tags/discoveries",
+      "order": 2,
+      "title": "Discoveries",
+      "original_title": "Discoveries",
+      "type": "Tags",
+      "classname": "",
+      "linktitle": "",
+      "items": [],
+      "pages": []
+    },
+    {
+      "id": "tags/our-backpack",
+      "order": 3,
+      "title": "Our Backpack",
+      "original_title": "Our Backpack",
+      "type": "Tags",
+      "classname": "",
+      "linktitle": "",
+      "items": [],
+      "pages": []
+    },
+    {
+      "id": "tags/tips-and-tricks",
+      "order": 4,
+      "title": "Tips & Tricks",
+      "original_title": "Tips & Tricks",
+      "type": "Tags",
+      "classname": "",
+      "linktitle": "",
+      "items": [],
+      "pages": []
+    },
+    {
+      "id": "tags/travel-tales",
+      "order": 5,
+      "title": "Travel Tales",
+      "original_title": "Travel Tales",
+      "type": "Tags",
+      "classname": "",
+      "linktitle": "",
+      "items": [],
+      "pages": []
+    },
+    {
+      "id": "tags/discoverer-spotlight",
+      "order": 6,
+      "title": "Discoverer Spotlight",
+      "original_title": "Discoverer Spotlight",
+      "type": "Tags",
+      "classname": "",
+      "linktitle": "",
+      "items": [],
+      "pages": []
+    }
+  ],
+  "locale": "en"
+}

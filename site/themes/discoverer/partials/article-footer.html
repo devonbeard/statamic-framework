@@ -1,0 +1,21 @@
+<section class="bg-white c-dark-green pt5 pb4 pb5-l">
+	<div class="mw9 center ph5-l ph4 flex-l justify-between">
+	  {{ collection:previous in="blog" limit="1" as="prev_posts" }}
+			{{ unless no_results }}
+				{{ prev_posts scope="tag" }}
+					{{ partial:related-article }}
+				{{ /prev_posts }}
+			{{ /unless }}
+		{{ /collection:previous }}
+
+	  {{ collection:next in="blog" limit="1" as="next_posts" }}
+			{{ unless no_results }}
+				{{ next_posts scope="tag" }}
+					<div class="tr-l">
+						{{ partial:related-article }}
+					</div>
+				{{ /next_posts }}
+			{{ /unless }}
+		{{ /collection:next }}
+	</div>
+</section>

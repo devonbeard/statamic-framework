@@ -1,0 +1,13 @@
+{{ if cta_button_text || cta_button_link }}
+  <a
+    href="{{ cta_button_link }}"
+    class="inline-flex items-center btn {{ if cta_button_style == 'main'}}btn-main{{ elseif cta_button_style == 'secondary' }}btn-secondary{{ /if }}  {{ if cta_button_size == 'large'}}btn--l{{ elseif cta_button_size == 'medium' }}btn--m{{ elseif cta_button_size == 'small' }}btn--s{{ /if }} center tracked"
+  >
+    {{ if cta_button_icon }}
+      {{ if cta_button_icon == 'play'}}
+        {{ theme:output src="svg/play.svg" }}
+      {{ /if }}
+    {{ /if }}
+    {{ cta_button_text}}
+  </a>
+{{ /if }}

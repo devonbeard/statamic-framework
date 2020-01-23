@@ -1,0 +1,311 @@
+{{ replicator_fields }}
+
+  {{ if type == "hero" }}
+    <section class="hero pv6 bg-newsprint tc ph3">
+      <div class="mw9-l mw8 center">
+        {{ if headline }}
+        <h1 class="ph6-l lh-title f-subheadline-l f1-m f2 mb3-ns mb2 pb2">
+          {{ headline }}
+        </h1>
+        {{ /if }}
+
+        {{ if description }}
+        <p class="f4 measure-narrow measure-l center mb4 pb2">
+          {{ description }}
+        </p>
+        {{ /if }}
+
+        {{ partial:button }}
+      </div>
+    </section>
+
+    <div class="nb2">
+      {{ theme:output src="svg/border.svg" class="w-100" }}
+    </div>
+
+{{ elseif type == "benefits_block" }}
+
+<section class="mv6 pv4 ph4">
+  <ul class="center mw8 ph4 flex-ns items-center justify-between flex-wrap">
+    {{ benefits }}
+    <li class="w-50-l w-100 mv3 mt0 ph3 mw6 center">
+      <div class="flex items-center justify-center card pa4-l pa3 pb3 pl4-l">
+        <p class="f1 f-alt c-dark-green lh-solid pr3">
+          {{ highlight }}
+          <span class="tr db nt4 pt1">
+            {{ theme:output src="svg/line.svg" }}
+          </span>
+        </p>
+        <p style="font-size: 21px;" class="lh-title">
+          {{ description }}
+        </p>
+      </div>
+    </li>
+    {{ /benefits }}
+  </ul>
+</section>
+
+{{ elseif type == "clients" }}
+
+<section class="tc">
+  {{ assets:feature_img }}
+  <img
+    class="nt2 nb2 w-100"
+    src="{{ site_url }}{{ feature_img }}"
+    alt="{{ alt }}"
+  />
+  {{ /assets:feature_img }}
+
+  <div class="bg-dark-green c-newsprint pt5 pb4">
+    {{ if headline }}
+    <h2 class="f-main--b tracked ttu f5 mb4">{{ headline }}</h2>
+    {{ /if }}
+
+    <ul
+      class="flex justify-center justify-between-l items-center tc center flex-wrap mw9 ph5-l ph2"
+    >
+      {{ assets:client_logos }}
+      <li class="{{ if !last }}mr2-l ph2{{ /if }} w-50 w-auto-l">
+        <img src="{{ site_url }}{{ url }}" alt="{alt}" }}
+      </li>
+      {{ /assets:client_logos }}
+    </ul>
+  </div>
+</section>
+
+{{ elseif type == "content_image_block" }}
+
+<section class="mv6 pv flex flex-wrap justify-between mw8-l mw7-m center ph3">
+  <div class="pr4-l order-1 order-0-l w-60-l">
+    {{ if headline }}
+    <h2 class="f-main--b ttu tracked f4 c-iron mb3">{{ headline}}</h2>
+    {{ /if }} {{ if description }}
+    <h3 class="f2 lh-title mb4 pb2">
+      {{ description }}
+    </h3>
+    {{ /if }}
+    {{ partial:button }}
+  </div>
+
+  <div class="order-0 order-1-l mb4 mb0-l w-40-l justify-center">
+    {{ theme:img src="integrations.jpg" tag="true" }}
+  </div>
+</section>
+
+{{ elseif type == "callout_block" }}
+  <section class="pv6 ph5-l ph4 c-newsprint bg-dark-green">
+    <div class="mw8 center flex flex-wrap justify-between">
+      {{ if headline }}
+        <div class="w-30-l">
+          <h2 class="lh-title f2 mb4">
+            {{ headline }}
+          </h2>
+        </div>
+      {{ /if }}
+
+      {{ if description || cta_link_text || cta_link_link }}
+        <div class="measure-wide">
+          {{ if description }}
+          <div class="mb4">
+            {{ description }}
+          </div>
+          {{ /if }}
+
+          {{ if cta_link_text || cta_link_link }}
+            <a href="{{ cta_link_link }}" class="inline-flex items-center white no-underline f4 grow">
+              {{ cta_link_text }}&nbsp;&nbsp;&nbsp;&nbsp;➔
+            </a>
+          {{ /if }}
+        </div>
+    {{ /if }}
+    </div>
+  </section>
+
+{{ elseif type == "full_width_video_block" }}
+
+<section
+  class="cover pv6 ph3 ph5-l"
+  style='background-image: url({{ theme:img src="discover.jpg"}})'
+>
+  <a
+    href="#"
+    class="flex items-center no-underline white f2-ns f3 f-alt--b center mw9"
+  >
+    <div class="mr4 flex items-center">
+      {{ theme:output src="svg/play.svg" }}
+    </div>
+    {{ video_button_text }}
+  </a>
+
+  {{ video_embed_code }}
+</section>
+
+{{ elseif type == "product_features" }}
+
+<section class="pv6-l pv5 tc bg-newsprint c-dark-green ph3">
+  {{ if headline }}
+  <h2 class="f1-l f2 lh-title measure center mb3">
+    {{ headline }}
+  </h2>
+  {{ /if }} {{ if description }}
+  <p class="f4 measure center mb4 pb2">
+    {{ description }}
+  </p>
+  {{ /if }} {{ if product_img }}
+  <div class="mb5 ph2">
+    {{ assets:product_img }}
+    <img src="{{ site_url }}{{ product_img }}" alt="{{ alt }}" />
+    {{ /assets:product_img }}
+  </div>
+  {{ /if }} {{ if product_features }}
+  <ul
+    class="flex-ns justify-between items-center center flex-wrap mw9 ph2 f-alt f5-ns f4 tl-ns tc"
+  >
+    {{ product_features }}
+    <li class="flex-ns items-center center mw5 pr3 mb4 mb0-l">
+      <div class="center tc" style="min-width: 54px;">
+        {{ assets:image }}
+        <img src="{{ site_url }}{{ image }}" alt="{{ alt }}" />
+        {{ /assets:image }}
+      </div>
+      <span class="pl3-ns">
+        {{ description }}
+      </span>
+    </li>
+    {{ /product_features }}
+  </ul>
+  {{ /if }}
+</section>
+
+{{ elseif type == "solutions_block" }}
+
+<section>
+  <section
+    class="mv6-l mv5 flex flex-wrap items-center justify-between mw9 center ph3 pattern-square"
+  >
+    <div class="mb5 mb0-l w-40-l justify-center relative center">
+      {{ theme:img src="solutions.jpg" tag="true" }}
+      <div class="absolute left--2 top--2-l bottom--2" style="z-index: -1">
+        {{ theme:output src="svg/square-pattern.svg" }}
+      </div>
+    </div>
+
+    <div class="measure-wide center">
+      {{ if headline }}
+      <h2 class="f-main--b ttu tracked f4 c-iron mb3">{{ headline }}</h2>
+      {{ /if }} {{ if description }}
+      <h3 class="f2 lh-copy mb4 pb2">
+        {{ description }}
+      </h3>
+      {{ /if }}
+    </div>
+  </section>
+
+  <div class="center mw9 flex justify-between flex-wrap">
+    <div class="w-100 w-25-l ph3 flex mw6 center">
+      <a
+        href="#"
+        class="card db relative mv3 pt4 pb5 ph4 w-100 no-underline c-dark-green"
+      >
+        <h4 style="font-size: 32px;" class="mb3">Family Office</h4>
+        <p>
+          Secure, upgraded technology for preserving and generating wealth.
+          Streamlined operations, open communication, and more informed
+          investment decisions.
+        </p>
+        <p class="c-mauve f-main--b absolute bottom-1 left-2">
+          Learn More &mdash;
+        </p>
+      </a>
+    </div>
+
+    <div class="w-100 w-25-l ph3 flex mw6 center">
+      <a
+        href="#"
+        class="card db relative mv3 pt4 pb5 ph4 w-100 no-underline c-dark-green"
+      >
+        <h4 style="font-size: 32px;" class="mb3">RIA</h4>
+        <p>
+          A resource-rich platform for providing tailored, high-touch service
+          for clients. Tools for gaining and maintaining a competitive
+          advantage, scaling customization while growing the business.
+        </p>
+        <p class="c-mauve f-main--b absolute bottom-1 left-2">
+          Learn More &mdash;
+        </p>
+      </a>
+    </div>
+
+    <div class="w-100 w-25-l ph3 flex mw6 center">
+      <a
+        href="#"
+        class="card db relative mv3 pt4 pb5 ph4 w-100 no-underline c-dark-green"
+      >
+        <h4 style="font-size: 32px;" class="mb3">Wirehouse</h4>
+        <p>
+          Data centralization, integration with legacy systems, and enhanced
+          investment management solutions that meet new and existing demands.
+        </p>
+        <p class="c-mauve f-main--b absolute bottom-1 left-2">
+          Learn More &mdash;
+        </p>
+      </a>
+    </div>
+
+    <div class="w-100 w-25-l ph3 flex mw6 center">
+      <a
+        href="#"
+        class="card db relative mv3 pt4 pb5 ph4 w-100 no-underline c-dark-green"
+      >
+        <h4 style="font-size: 32px;" class="mb3">Private Bank</h4>
+        <p>
+          Market-leading technology for optimizing efficiency and increasing
+          capacity, allowing for the highest level of client service.
+        </p>
+        <p class="c-mauve f-main--b absolute bottom-1 left-2">
+          Learn More &mdash;
+        </p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{{ elseif type == "two_col_block" }}
+
+<section class="flex flex-wrap">
+  <div class="bg-newsprint c-dark-green pt5-l pb4 ph5-l pa4 w-50-l w-100">
+    <div class="mw6 fr-l pr5-l measure center">
+      {{ if headline }}
+      <h2 class="f1 lh-title mb2">
+        {{ headline }}
+      </h2>
+      {{ /if }} {{ if description }}
+      <div class="f4 mb4 pb2">
+        {{ description }}
+      </div>
+      {{ /if }}
+    </div>
+  </div>
+
+  <div class="bg-mauve c-white f4 w-50-l w-100 pt5-l ph5-l pa4-ns ph3">
+    <div class="mw6 fl-l pr4-l center">
+      <blockquote class="f-alt--b">
+        <span class="f3-ns f4">{{ quote }}</span>
+
+        <p class="f-main pt4">{{ quote_author }}</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+{{ /if }} {{ /replicator_fields }}
+
+<!--
+<article class="list">
+  {{ collection:blog :limit="posts" scope="tag" }} {{ partial:block }} {{
+  /collection:blog }}
+</article>
+
+<div class="read-more">
+  <a href="{{ link to='blog' }}">Read the rest of the blog</a>
+</div> -->

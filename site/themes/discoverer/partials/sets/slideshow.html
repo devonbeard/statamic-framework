@@ -1,0 +1,11 @@
+<div class="js-slick-slideshow">
+  {{ slide }}
+    <div>
+      <img
+        src="{{ site_url }}{{ image }}"
+        class="{{ size | lower }} {{ if caption }}captioned{{ /if }} mb3"
+        alt="{{ caption }}"
+      />
+    </div>
+  {{ /slide }}
+</div>

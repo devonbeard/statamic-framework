@@ -1,0 +1,58 @@
+<header
+  role="banner"
+  class="flex items-center justify-between mw9 pv4 ph4 center bg-newsprint"
+>
+  <a href="{{ link to='/' }}" class="flex items-center pa2">
+    <img
+      src="{{ site_url }}{{ theme:img src='img/logo.png' }}"
+      alt="{{ alt }}"
+    />
+  </a>
+
+  <div class="dn db-l desktop-menu">{{ big_kahuna menu="main-menu" }}</div>
+
+  <button
+    class="pa2 db dn-l button-reset mobile-menu-button js-mobile-menu-button"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="26"
+      height="18"
+      fill="none"
+      viewBox="0 0 26 18"
+    >
+      <path
+        stroke="#1C393C"
+        stroke-linecap="round"
+        stroke-linejoin="bevel"
+        stroke-width="2"
+        d="M1 9h24M1 1h24M1 17h24"
+      />
+    </svg>
+  </button>
+</header>
+
+<div
+  class="fixed absolute--fill mobile-menu__container js-mobile-menu pa4 pv4 overflow-scroll z-5"
+>
+  <button
+    class="pa2 dib button-reset mobile-menu-button js-mobile-menu-close absolute top-2 right-2 z-2"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="26"
+      height="18"
+      fill="none"
+      viewBox="0 0 26 18"
+    >
+      <path
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="bevel"
+        stroke-width="2"
+        d="M1 9h24M1 1h24M1 17h24"
+      />
+    </svg>
+  </button>
+  {{ big_kahuna menu="mobile-menu" }}
+</div>

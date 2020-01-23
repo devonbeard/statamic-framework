@@ -1,0 +1,82 @@
+title: "Blog Post"
+hide: true
+sections:
+  main:
+    display: Main
+    fields:
+      title:
+        type: text
+        display: Title
+        localizable: true
+        width: 50
+      slug:
+        width: 50
+        type: text
+      featured_image:
+        container: main
+        folder: img
+        restrict: false
+        max_files: 1
+        type: assets
+        display: "Featured Image"
+      long_form_content:
+        type: bard
+        display: "Article Content"
+        sets:
+          image:
+            display: Image
+            fields:
+              photo:
+                display: Photo
+                type: assets
+                container: main
+                folder: img
+                max_files: 1
+              caption:
+                type: text
+              size:
+                type: radio
+                default: Normal
+                options:
+                  Normal: Normal
+                  Oversized: Oversized
+          quote:
+            display: "Pull Quote"
+            fields:
+              quote:
+                display: "The Quote"
+                type: markdown
+              cite:
+                type: text
+                display: Cite
+          slideshow:
+            type: grid
+            display: Slideshow
+            sets:
+              slide:
+                display: Slide
+                fields:
+                  image:
+                    display: Image
+                    type: assets
+                    container: main
+                    folder: img
+                    max_files: 1
+                  description:
+                    display: Description
+                    type: textarea
+            fields:
+              slide:
+                mode: stacked
+                add_row: "Add Slide"
+                fields:
+                  image:
+                    container: main
+                    folder: img
+                    restrict: false
+                    type: assets
+                    display: Image
+                    max_files: 1
+                type: grid
+                display: Slide
+taxonomies: true

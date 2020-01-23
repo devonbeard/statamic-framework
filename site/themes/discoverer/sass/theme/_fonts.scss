@@ -1,0 +1,50 @@
+/**
+ * Fonts:
+ *
+ *
+ */
+
+/* Font Families */
+@font-face {
+  font-family: "gibsonregular";
+  src: url("../fonts/gibson-regular-webfont.woff2") format("woff2"),
+    url("../fonts/gibson-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gibsonsemibold";
+  src: url("../fonts/gibson-semibold-webfont.woff2") format("woff2"),
+    url("../fonts/gibson-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Text Test";
+  src: url("../fonts/TiemposTextTest-Medium.woff2") format("woff2"),
+    url("../fonts/TiemposTextTest-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../fonts/TiemposHeadline-Regular.woff2") format("woff2"),
+    url("../fonts/TiemposHeadline-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin font--main {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+@mixin font--secondary {
+  font-family: Georgia, serif;
+}

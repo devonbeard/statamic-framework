@@ -1,0 +1,11 @@
+<figure>
+  <img
+    src="{{ site_url }}{{ photo }}"
+    class="{{ size | lower }} {{ if caption }}captioned{{ /if }} mb3"
+    alt="{{ caption }}"
+  />
+
+  {{ if caption }}
+    <figcaption>{{  caption }}</figcaption>
+  {{ /if }}
+</figure>

@@ -1,0 +1,44 @@
+<section class="flex justify-between mw8 center pv6">
+  <header>
+    <div class="meta clearfix">
+      <div class="author">
+        <img
+          src="https://s3.amazonaws.com/uifaces/faces/twitter/rssems/48.jpg"
+          class="img-circle"
+          width="48"
+          height="48"
+        />
+        <div class="pull-left">
+          <a href="{{ url }}" class="name">{{ author_name }}</a>
+        </div>
+      </div>
+      <div class="date">
+        {{ date format="F j, Y" }}
+      </div>
+    </div>
+  </header>
+
+  <article class="mw7">
+    <figure>
+      <img
+        src="{{ site_url }}{{ featured_image }}"
+        class="{{ size | lower }} {{ if caption }}captioned{{ /if }} mb3"
+        alt="{{ caption }}"
+      />
+
+      {{ if caption }}
+        <figcaption>{{  caption }}</figcaption>
+      {{ /if }}
+    </figure>
+
+    <h1 class="f1 c-dark-green lh-title mb4">{{ title }}</h1>
+
+		<div class="article-content black w-90">
+      {{ long_form_content }}
+        {{ partial src="sets/{type}" }}
+      {{ /long_form_content }}
+		</div>
+  </article>
+</section>
+
+{{ partial:article-footer }}

@@ -1,0 +1,123 @@
+/**
+ * Color Variables
+ */
+
+$jaffa          : #F1783C;
+
+$shark          : #2D3033;
+$nevada         : #666A6E;
+$gray-chateau   : #9EA3A6;
+$iron           : #D4D9DE;
+$athens-gray    : #F0F2F4;
+$catskill-white : #FBFCFD;
+$white          : #ffffff;
+
+$malibu         : #65D2FF;
+$dodger-blue    : #28BBF8;
+$curious-blue   : #23A3D8;
+
+$sweet-pink     : #FD9494;
+$carnation      : #FB6262;
+$chestnut-rose  : #D05757;
+
+$goldenrod      : #FACB6F;
+$web-orange     : #FFAA00;
+$gamboge        : #DE9709;
+
+$sulu           : #A2F27A;
+$lima           : #59D31D;
+$christi        : #4DB619;
+
+$error          : $carnation;
+$success        : $lima;
+
+
+$colors:
+  ('jaffa', $jaffa),
+  ('shark', $shark),
+  ('nevada', $nevada),
+  ('gray-chateau', $gray-chateau),
+  ('iron', $iron),
+  ('athens-gray', $athens-gray),
+  ('catskill-white', $catskill-white),
+  ('white', $white),
+  ('malibu', $malibu),
+  ('dodger-blue', $dodger-blue),
+  ('curious-blue', $curious-blue),
+  ('sweet-pink', $sweet-pink),
+  ('carnation', $carnation),
+  ('chestnut-rose', $chestnut-rose),
+  ('goldenrod', $goldenrod),
+  ('web-orange', $web-orange),
+  ('gamboge', $gamboge),
+  ('sulu', $sulu),
+  ('lima', $lima),
+  ('christi', $christi);
+
+
+
+
+/* ::Btn color generator */
+/* ------------------------------------------------------------ */
+@function set-btn-color($color) {
+  @if (
+        $color == $iron or
+        $color == $athens-gray or
+        $color == $catskill-white
+    ) {
+    @return $white;
+  } @else {
+    @return $shark;
+  }
+}
+
+@function set-btn-outline-color($color) {
+  @if (
+        $color == $iron or
+        $color == $athens-gray or
+        $color == $catskill-white
+    ) {
+    @return $shark;
+  } @else {
+    @return $white;
+  }
+}
+
+
+
+@each $color in $colors {
+  .bg-#{nth($color, 1)} {
+    background-color: nth($color, 2);
+  }
+
+  .c-#{nth($color, 1)} {
+    color: nth($color, 2);
+  }
+
+  .bc-#{nth($color, 1)} {
+    border-color: nth($color, 2);
+  }
+
+  .btn--#{nth($color, 1)} {
+    background-color: nth($color, 2);
+    border-color: nth($color, 2);
+    color: set-btn-color( nth($color, 2) );
+
+    &:hover {
+      background: darken( nth($color, 2), 10% );
+      border-color: darken( nth($color, 2), 10% );
+    }
+  }
+
+  .btn--reverse--#{nth($color, 1)} {
+    background-color: transparent;
+    border-color: nth($color, 2);
+    color: nth($color, 2);
+
+    &:hover, &:focus {
+      background: nth($color, 2);
+      border-color: nth($color, 2);
+      color: set-btn-outline-color( nth($color, 2) );
+    }
+  }
+}
