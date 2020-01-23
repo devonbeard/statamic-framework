@@ -2,88 +2,62 @@
  * Color Variables
  */
 
-$jaffa          : #F1783C;
+$primary: #25c2b4;
+$primary-light: #23d8c8;
+$primary-dark: #23d8c8;
 
-$shark          : #2D3033;
-$nevada         : #666A6E;
-$gray-chateau   : #9EA3A6;
-$iron           : #D4D9DE;
-$athens-gray    : #F0F2F4;
-$catskill-white : #FBFCFD;
-$white          : #ffffff;
+$secondary: #25c2b4;
+$secondary-light: #23d8c8;
+$secondary-dark: #23d8c8;
 
-$malibu         : #65D2FF;
-$dodger-blue    : #28BBF8;
-$curious-blue   : #23A3D8;
+$tertiary: #25c2b4;
+$tertiary-light: #23d8c8;
+$tertiary-dark: #23d8c8;
 
-$sweet-pink     : #FD9494;
-$carnation      : #FB6262;
-$chestnut-rose  : #D05757;
+// Greyscale Colors
+$black: #4c4c4c;
+$dark-grey: #5e5e5e;
+$grey: #8c8c8c;
+$light-grey: #e8e8e8;
+$off-$white: #f7f7f8;
+$white: #fff;
 
-$goldenrod      : #FACB6F;
-$web-orange     : #FFAA00;
-$gamboge        : #DE9709;
+// System colors
+$error: $carnation;
+$success: $lima;
+$warning: $carnation;
 
-$sulu           : #A2F27A;
-$lima           : #59D31D;
-$christi        : #4DB619;
-
-$error          : $carnation;
-$success        : $lima;
-
-
-$colors:
-  ('jaffa', $jaffa),
-  ('shark', $shark),
-  ('nevada', $nevada),
-  ('gray-chateau', $gray-chateau),
-  ('iron', $iron),
-  ('athens-gray', $athens-gray),
-  ('catskill-white', $catskill-white),
-  ('white', $white),
-  ('malibu', $malibu),
-  ('dodger-blue', $dodger-blue),
-  ('curious-blue', $curious-blue),
-  ('sweet-pink', $sweet-pink),
-  ('carnation', $carnation),
-  ('chestnut-rose', $chestnut-rose),
-  ('goldenrod', $goldenrod),
-  ('web-orange', $web-orange),
-  ('gamboge', $gamboge),
-  ('sulu', $sulu),
-  ('lima', $lima),
-  ('christi', $christi);
-
-
-
+$colors: ("primary", $primary), ("primary-light", $primary-light),
+  ("primary-dark", $primary-dark),
+  ("secondary", $secondary) ("secondary-light", $secondary-light),
+  ("secondary-dark", $secondary-dark),
+  ("tertiary", $tertiary) ("tertiary-light", $tertiary-light),
+  ("tertiary-dark", $tertiary-dark),
+  // Greyscale colors
+    ("black", $black) ("dark-grey", $dark-grey),
+  ("light-grey", $light-grey), ("grey", $grey), ("off-white", $off-white),
+  ("white", $white),
+  // system colors
+    ("error", $error) ("success", $success),
+  ("warning", $warning);
 
 /* ::Btn color generator */
 /* ------------------------------------------------------------ */
 @function set-btn-color($color) {
-  @if (
-        $color == $iron or
-        $color == $athens-gray or
-        $color == $catskill-white
-    ) {
+  @if ($color == $black or $color == $dark-grey) {
     @return $white;
   } @else {
-    @return $shark;
+    @return $black;
   }
 }
 
 @function set-btn-outline-color($color) {
-  @if (
-        $color == $iron or
-        $color == $athens-gray or
-        $color == $catskill-white
-    ) {
-    @return $shark;
+  @if ($color == $black or $color == $dark-grey) {
+    @return $black;
   } @else {
     @return $white;
   }
 }
-
-
 
 @each $color in $colors {
   .bg-#{nth($color, 1)} {
@@ -101,11 +75,11 @@ $colors:
   .btn--#{nth($color, 1)} {
     background-color: nth($color, 2);
     border-color: nth($color, 2);
-    color: set-btn-color( nth($color, 2) );
+    color: set-btn-color(nth($color, 2));
 
     &:hover {
-      background: darken( nth($color, 2), 10% );
-      border-color: darken( nth($color, 2), 10% );
+      background: darken(nth($color, 2), 10%);
+      border-color: darken(nth($color, 2), 10%);
     }
   }
 
@@ -114,10 +88,11 @@ $colors:
     border-color: nth($color, 2);
     color: nth($color, 2);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: nth($color, 2);
       border-color: nth($color, 2);
-      color: set-btn-outline-color( nth($color, 2) );
+      color: set-btn-outline-color(nth($color, 2));
     }
   }
 }
