@@ -1,4 +1,4 @@
-title: "Blog Post"
+title: 'Blog Post'
 hide: true
 sections:
   main:
@@ -18,10 +18,10 @@ sections:
         restrict: false
         max_files: 1
         type: assets
-        display: "Featured Image"
+        display: 'Featured Image'
       long_form_content:
         type: bard
-        display: "Article Content"
+        display: 'Article Content'
         sets:
           image:
             display: Image
@@ -34,17 +34,19 @@ sections:
                 max_files: 1
               caption:
                 type: text
+                display: Caption
               size:
                 type: radio
                 default: Normal
                 options:
                   Normal: Normal
                   Oversized: Oversized
+                display: Size
           quote:
-            display: "Pull Quote"
+            display: 'Pull Quote'
             fields:
               quote:
-                display: "The Quote"
+                display: 'The Quote'
                 type: markdown
               cite:
                 type: text
@@ -68,7 +70,7 @@ sections:
             fields:
               slide:
                 mode: stacked
-                add_row: "Add Slide"
+                add_row: 'Add Slide'
                 fields:
                   image:
                     container: main
