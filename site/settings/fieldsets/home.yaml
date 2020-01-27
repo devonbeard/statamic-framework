@@ -1,4 +1,3 @@
-hide: true
 sections:
   main:
     display: Main
@@ -214,4 +213,4 @@ sections:
                 display: 'Quote Author'
                 type: text
 taxonomies: true
-title: Home
+title: 'Content Block'
