@@ -1,3 +1,4 @@
+order: date
 title: Editions
 fieldset: post
 template: blog/index
