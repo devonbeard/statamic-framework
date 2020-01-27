@@ -19,5 +19,6 @@ routes:
 collections:
   blog: '/blog/{slug}'
   national-parks: '/national-parks/{slug}'
+  editions: '/editions/{slug}'
 taxonomies:
   tags: '/blog/tags/{slug}'
