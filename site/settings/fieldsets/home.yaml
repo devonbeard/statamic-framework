@@ -1,210 +1,217 @@
 hide: true
-fields:
-  replicator_fields:
-    type: replicator
-    display: Replicator
-    sets:
-      hero:
-        display: Hero Block
-        fields:
-          headline:
-            display: Headline
-            type: text
-          description:
-            display: Description
-            type: textarea
-          cta_button_style:
-            display: Button Style
-            type: select
-            width: 33
-            default: Main
-            options:
-              main: Main
-              secondary: Secondary
-          cta_button_size:
-            display: Button Size
-            type: select
-            width: 33
-            options:
-              small: Small
-              medium: Medium
-              large: Large
-          cta_button_icon:
-            display: Include Button Icon?
-            type: select
-            width: 33
-            options:
-              play: Play
-          cta_button_text:
-            display: Button Text
-            type: text
-          cta_button_link:
-            display: Button Link
-            type: text
-      benefits_block:
-        display: Benefits Block
-        fields:
-          benefits:
-            type: grid
-            display: Benefits
-            add_row: Add Item
+sections:
+  main:
+    display: Main
+    fields:
+      replicator_fields:
+        type: replicator
+        display: Replicator
+        sets:
+          hero:
+            display: 'Hero Block'
             fields:
-              highlight:
+              headline:
+                display: Headline
                 type: text
               description:
+                display: Description
+                type: textarea
+              cta_button_style:
+                display: 'Button Style'
+                type: select
+                width: 33
+                default: Main
+                options:
+                  main: Main
+                  secondary: Secondary
+              cta_button_size:
+                display: 'Button Size'
+                type: select
+                width: 33
+                options:
+                  small: Small
+                  medium: Medium
+                  large: Large
+              cta_button_icon:
+                display: 'Include Button Icon?'
+                type: select
+                width: 33
+                options:
+                  play: Play
+              cta_button_text:
+                display: 'Button Text'
                 type: text
-      content_image_block:
-        display: Content Block with Featured Image
-        fields:
-          headline:
-            display: Headline
-            type: text
-          description:
-            display: Description
-            type: textarea
-          cta_button_style:
-            display: Button Style
-            type: select
-            width: 33
-            default: Main
-            options:
-              main: Main
-              secondary: Secondary
-          cta_button_size:
-            display: Button Size
-            type: select
-            width: 33
-            options:
-              small: Small
-              medium: Medium
-              large: Large
-          cta_button_icon:
-            display: Include Button Icon?
-            type: select
-            width: 33
-            options:
-              play: Play
-          cta_button_text:
-            display: Button Text
-            type: text
-          cta_button_link:
-            display: Button Link
-            type: text
-          featured_image:
-            display: Featured Image
-            type: assets
-            container: main
-            folder: img
-            max_files: 1
-      clients:
-        display: Client Block
-        fields:
-          feature_img:
-            display: Featured Image
-            type: assets
-            container: main
-            folder: img
-            max_files: 1
-          headline:
-            display: Headline
-            type: text
-          client_logos:
-            display: Client Logo
-            type: assets
-            container: main
-            folder: img
-            max_files: 5
-      callout_block:
-        display: Callout Block
-        fields:
-          background_color:
-            display: Block Background Color
-            type: select
-            options:
-              forest: Forest
-              iron: Iron
-          callout_headline:
-            display: Headline
-            type: text
-          callout_description:
-            display: Description
-            type: redactor
-          callout_link_text:
-            display: Link Text
-            type: text
-          callout_link_link:
-            display: Link URL
-            type: text
-      full_width_video_block:
-        display: Full Width Video Block
-        fields:
-          video_button_text:
-            display: Video Button Text
-            type: text
-          video_embed_code:
-            display: Video Embed Code
-            instructions: Paste your youtube/vimeo embed code here.
-            type: textarea
-      product_features:
-        display: Product Features Block
-        fields:
-          headline:
-            display: Headline
-            type: text
-          description:
-            display: Description
-            type: textarea
-          product_img:
-            display: Product Feature Image
-            type: assets
-            container: main
-            folder: img
-            max_files: 1
-          product_features:
-            type: grid
-            display: Product Features
-            add_row: Add Item
+                width: 50
+              cta_button_link:
+                display: 'Button Link'
+                type: text
+                width: 50
+          benefits_block:
+            display: 'Benefits Block'
             fields:
-              image:
+              benefits:
+                type: grid
+                display: Benefits
+                add_row: 'Add Item'
+                fields:
+                  highlight:
+                    type: text
+                  description:
+                    type: text
+          content_image_block:
+            display: 'Content Block with Featured Image'
+            fields:
+              headline:
+                display: Headline
+                type: text
+              description:
+                display: Description
+                type: textarea
+              cta_button_style:
+                display: 'Button Style'
+                type: select
+                width: 33
+                default: Main
+                options:
+                  main: Main
+                  secondary: Secondary
+              cta_button_size:
+                display: 'Button Size'
+                type: select
+                width: 33
+                options:
+                  small: Small
+                  medium: Medium
+                  large: Large
+              cta_button_icon:
+                display: 'Include Button Icon?'
+                type: select
+                width: 33
+                options:
+                  play: Play
+              cta_button_text:
+                display: 'Button Text'
+                type: text
+              cta_button_link:
+                display: 'Button Link'
+                type: text
+              featured_image:
+                display: 'Featured Image'
                 type: assets
                 container: main
                 folder: img
                 max_files: 1
-              description:
+          clients:
+            display: 'Client Block'
+            fields:
+              feature_img:
+                display: 'Featured Image'
+                type: assets
+                container: main
+                folder: img
+                max_files: 1
+              headline:
+                display: Headline
                 type: text
-      solutions_block:
-        display: Solutions Block
-        fields:
-          headline:
-            display: Headline
-            type: text
-          description:
-            display: Description
-            type: textarea
-          featured_image:
-            display: Featured Image
-            type: assets
-            container: main
-            folder: img
-            max_files: 1
-      two_col_block:
-        display: Two Column Block
-        fields:
-          left_col:
-            display: Left Column
-            type: section
-          headline:
-            display: Headline
-            type: text
-          description:
-            display: Description
-            type: redactor
-          right_col:
-            display: Right Column
-            type: section
-          quote:
-            display: Quote
-            type: textarea
-          quote_author:
-            display: Quote Author
-            type: text
+              client_logos:
+                display: 'Client Logo'
+                type: assets
+                container: main
+                folder: img
+                max_files: 5
+          callout_block:
+            display: 'Callout Block'
+            fields:
+              background_color:
+                display: 'Block Background Color'
+                type: select
+                options:
+                  forest: Forest
+                  iron: Iron
+              callout_headline:
+                display: Headline
+                type: text
+              callout_description:
+                display: Description
+                type: redactor
+              callout_link_text:
+                display: 'Link Text'
+                type: text
+              callout_link_link:
+                display: 'Link URL'
+                type: text
+          full_width_video_block:
+            display: 'Full Width Video Block'
+            fields:
+              video_button_text:
+                display: 'Video Button Text'
+                type: text
+              video_embed_code:
+                display: 'Video Embed Code'
+                instructions: 'Paste your youtube/vimeo embed code here.'
+                type: textarea
+          product_features:
+            display: 'Product Features Block'
+            fields:
+              headline:
+                display: Headline
+                type: text
+              description:
+                display: Description
+                type: textarea
+              product_img:
+                display: 'Product Feature Image'
+                type: assets
+                container: main
+                folder: img
+                max_files: 1
+              product_features:
+                type: grid
+                display: 'Product Features'
+                add_row: 'Add Item'
+                fields:
+                  image:
+                    type: assets
+                    container: main
+                    folder: img
+                    max_files: 1
+                  description:
+                    type: text
+          solutions_block:
+            display: 'Solutions Block'
+            fields:
+              headline:
+                display: Headline
+                type: text
+              description:
+                display: Description
+                type: textarea
+              featured_image:
+                display: 'Featured Image'
+                type: assets
+                container: main
+                folder: img
+                max_files: 1
+          two_col_block:
+            display: 'Two Column Block'
+            fields:
+              left_col:
+                display: 'Left Column'
+                type: section
+              headline:
+                display: Headline
+                type: text
+              description:
+                display: Description
+                type: redactor
+              right_col:
+                display: 'Right Column'
+                type: section
+              quote:
+                display: Quote
+                type: textarea
+              quote_author:
+                display: 'Quote Author'
+                type: text
+taxonomies: true
+title: Home
