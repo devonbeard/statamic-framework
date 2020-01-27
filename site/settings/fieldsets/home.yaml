@@ -9,6 +9,13 @@ sections:
           hero:
             display: 'Hero Block'
             fields:
+              hero_image:
+                container: main
+                folder: img
+                restrict: false
+                max_files: 1
+                type: assets
+                display: 'Hero Image'
               headline:
                 display: Headline
                 type: text
