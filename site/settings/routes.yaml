@@ -14,5 +14,6 @@ routes:
     content_type: atom
 collections:
   blog: '/blog/{slug}'
+  national-parks: /national-parks
 taxonomies:
   tags: '/blog/tags/{slug}'
