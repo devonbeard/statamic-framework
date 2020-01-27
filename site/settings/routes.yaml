@@ -12,6 +12,10 @@ routes:
     layout: feed
     template: feeds/blog
     content_type: atom
+  /national-parks/feed:
+    layout: feed
+    template: feeds/blog
+    content_type: atom
 collections:
   blog: '/blog/{slug}'
   national-parks: '/national-parks/{slug}'
